@@ -9,56 +9,66 @@ import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class Type {
-    val recipesAppTypography = Typography(
-        displayLarge = TextStyle(
-            fontFamily = FontFamily().monserratFontFamily,
-            fontSize = 20.sp,
-        ),
-        titleMedium = TextStyle(
-            fontFamily = FontFamily().monserratAlternatesFontFamily,
-            fontSize = 16.sp,
-        ),
-        bodyMedium = TextStyle(
-            fontFamily = FontFamily().monserratFontFamily,
-            fontSize = 14.sp,
-        ),
-        bodySmall = TextStyle(
-            fontFamily = FontFamily().monserratFontFamily,
-            fontSize = 12.sp,
-        ),
-        labelLarge = TextStyle(
-            fontFamily = FontFamily().monserratFontFamily,
-            fontSize = 16.sp,
-        )
-    )
 
-    @Preview(showBackground = true)
-    @Composable
-    fun TypographyPreview() {
-        RecipesAppTheme {
-            Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Text(
-                    "displayLarge - Заголовки экранов",
-                    style = MaterialTheme.typography.displayLarge
-                )
-                Text("titleMedium - Карточки", style = MaterialTheme.typography.titleMedium)
-                Text("bodyMedium - Основной текст", style = MaterialTheme.typography.bodyMedium)
-                Text("bodySmall - Мелкий текст", style = MaterialTheme.typography.bodySmall)
-                Text("labelLarge - Кнопки", style = MaterialTheme.typography.labelLarge)
-            }
+val recipesAppTypography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = montserratAlternatesFontFamily,
+        fontSize = 20.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 24.sp
+    ),
+    titleMedium = TextStyle(
+        fontFamily = montserratAlternatesFontFamily,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 19.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = montserratFontFamily,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Medium,
+        lineHeight = 16.sp
+    ),
+    bodySmall = TextStyle(
+        fontFamily = montserratFontFamily,
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Normal,
+        lineHeight = 16.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = montserratFontFamily,
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Medium,
+        lineHeight = 19.5.sp
+    )
+)
+
+@Preview(showBackground = true)
+@Composable
+fun TypographyPreview() {
+    RecipesAppTheme {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                "displayLarge - Заголовки экранов",
+                style = MaterialTheme.typography.displayLarge
+            )
+            Text("titleMedium - Карточки", style = MaterialTheme.typography.titleMedium)
+            Text("bodyMedium - Основной текст", style = MaterialTheme.typography.bodyMedium)
+            Text("bodySmall - Мелкий текст", style = MaterialTheme.typography.bodySmall)
+            Text("labelLarge - Кнопки", style = MaterialTheme.typography.labelLarge)
         }
     }
+}
 
-    @Composable
-    fun RecipesAppTheme(content: @Composable () -> Unit) {
-        TODO("Not yet implemented")
-    }
+@Composable
+fun RecipesAppTheme(content: @Composable () -> Unit) {
+    TODO("Not yet implemented")
 }
