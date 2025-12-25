@@ -70,5 +70,5 @@ fun TypographyPreview() {
 
 @Composable
 fun RecipesAppTheme(content: @Composable () -> Unit) {
-    TODO("Not yet implemented")
+    MaterialTheme(typography = recipesAppTypography) { content() }
 }
